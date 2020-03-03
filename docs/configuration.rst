@@ -145,7 +145,11 @@ These settings affect the policy in the header. The defaults are in *italics*.
 ``CSP_INCLUDE_NONCE_IN``
     Include dynamically generated nonce in all listed directives.
     A ``tuple`` or ``list``, e.g.: ``CSP_INCLUDE_NONCE_IN = ['script-src']``
-    will add ``'nonce-<b64-value>'`` to the ``script-src`` directive.  *None*
+    will add ``'nonce-<b64-value>'`` to the ``script-src`` directive.
+    *['default-src']*
+
+    Note: The nonce value will only be included if ``request.cps_nonce``
+    is accessed during the request/response cycle.
 
 
 Changing the Policy
